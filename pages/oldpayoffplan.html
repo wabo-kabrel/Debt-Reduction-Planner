@@ -1,0 +1,480 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt-payoff</title>
+    <link rel="stylesheet" href="../css/Debtpayoff.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <h1 class="logo">Debt Detox</h1>
+        <ul class="nav-items">
+            <li>Status: Debt-Free</li>
+            <li>Time Left: 0 Days</li>
+        </ul>
+    </div>
+
+    <div class="container"> -->
+<!-- Sidebar -->
+<!-- <div class="sidebar">
+            <img class="profile-picture" src="../assets/images/pfp.jpg" alt="profile-picture" />
+            <h2>Light Yagami</h2>
+            <ul>
+                <li>
+                    <img class="sidebar-icon" src="../assets/icons/dashboardIcon.png" alt="icon">    
+                    <a class="sidebar-page" href="#dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <img class="sidebar-icon" src="../assets/icons/debtIcon.png" alt="Icon">
+                    <a class="sidebar-page" href="#">Debts</a>
+                </li>
+                <li>
+                    <img class="sidebar-icon" src="../assets/icons/payoffplanIcon.png" alt="Icon">
+                    <a href="#">Payoff Plan</a>
+                </li>
+                <li>
+                    <img class="sidebar-icon" src="../assets/icons/payoffhistoryIcon.png" alt="Icon">
+                    <a href="#">Payoff History</a>
+                </li>
+                <li>
+                    <img class="sidebar-icon" src="../assets/icons/bankIcon.png" alt="Icon">
+                    <a href="#">Bank Accounts</a>
+                </li>
+                <li>
+                    <img class="sidebar-icon" src="../assets/icons/settingsIcon.png" alt="Icon">
+                    <a href="#">Settings</a>
+                </li>
+            </ul>
+        </div> -->
+
+<!-- Main Content -->
+<!-- <div class="main-content">
+            <div class="header">
+                <h2>Payoff Plan</h2>
+            </div>
+            
+            <div class="controls">
+                <select id="sortOrder">
+                    <option value="lowest">Lowest Balance First</option>
+                    <option value="highest">Highest Balance First</option>
+                </select>
+                
+                <select id="currentMonth">
+                    <option value="current">User Current Month</option>
+                </select>
+                
+                <div class="amount-input">
+                    <button onclick="decreaseAmount()">-</button>
+                    <span>$</span>
+                    <input type="text" id="amount" value="2000">
+                    <button onclick="increaseAmount()">+</button>
+                </div>
+                
+                <button class="apply-btn" onclick="applyChanges()">Apply</button>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Month</th>
+                            <th>Snowball Amt.</th>
+                            <th>Add'l Payments</th>
+                            <th>Total Interest</th>
+                            <th>Balance</th>
+                            <th>Total Payments</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+            
+            <div class="summary">
+                <div class="total-paid">
+                    <span>Total Paid</span>
+                    <span id="totalPaidAmount">$0</span>
+                </div>
+                
+                <div class="stats">
+                    <div>
+                        <div class="stat-label">INTEREST PAID PCT.</div>
+                        <div class="stat-value">n/a</div>
+                    </div>
+                    <div>
+                        <div class="stat-label">TOTAL INTEREST</div>
+                        <div class="stat-value">$0</div>
+                    </div>
+                    <div>
+                        <div class="stat-label">MONTHS TO PAYOFF</div>
+                        <div class="stat-value">-1</div>
+                    </div>
+                    <div>
+                        <div class="stat-label">PAID-OFF</div>
+                        <div class="stat-value">NOV 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How it Works</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Use</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <div>Email: support@debtdedox.com</div>
+                <div>Phone Number: +237 xxx xxx xxx/ +237 xxx xxx xxx</div>
+                <div>Address: xxxxxxx</div>
+                
+                <div class="social-links">
+                    <h3>Social Links</h3>
+                    <div class="social-icons">
+                        <a href="#facebook"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#linkedin"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                        <a href="#instagram"><img src="instagram-icon.png" alt="Instagram"></a>
+                        <a href="#whatsapp"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <div>Your Partner in Financial Freedom.</div>
+                <div>© 2024 DebtDedox. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    
+        let currentAmount = 2000;
+        
+        function decreaseAmount() {
+            if (currentAmount > 100) {
+                currentAmount -= 100;
+                document.getElementById('amount').value = currentAmount;
+            }
+        }
+        
+        function increaseAmount() {
+            currentAmount += 100;
+            document.getElementById('amount').value = currentAmount;
+        }
+        
+        function applyChanges() {
+            const amount = document.getElementById('amount').value;
+            const sortOrder = document.getElementById('sortOrder').value;
+            const currentMonth = document.getElementById('currentMonth').value;
+            calculateSnowball(parseFloat(amount), sortOrder, currentMonth);
+        }
+        
+        function calculateSnowball(amount, sortOrder, currentMonth) {
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = '';
+            
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>1</td>
+                <td>JAN 2025</td>
+                <td>$${amount.toFixed(2)}</td>
+                <td>$0.00</td>
+                <td>$0.00</td>
+                <td>$${(amount * 0.9).toFixed(2)}</td>
+                <td>$${amount.toFixed(2)}</td>
+            `;
+            tableBody.appendChild(row);
+            
+            document.getElementById('totalPaidAmount').textContent = `$${amount.toFixed(2)}`;
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            applyChanges();
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debt Detox - Payoff Plan</title>
+    <link rel="stylesheet" href="../css/payoffplan.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <img src="../assets/images/Dedox.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li>Status: In Progress</li>
+        <li>Time Left: 365 Days</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="sidebar">
+        <img
+          class="profile-picture"
+          src="../assets/images/pfp.jpg"
+          alt="profile-picture"
+        />
+        <h2>Light Yagami</h2>
+        <ul>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/dashboardIcon.png"
+              alt="icon"
+            />
+            <a href="dashboard1.html">Dashboard</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/debtIcon.png"
+              alt="Icon"
+            />
+            <a href="debts.html">Debts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffplanIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffplan.html">Payoff Plan</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffhistoryIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffhistory.html">Payoff History</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/bankIcon.png"
+              alt="Icon"
+            />
+            <a href="bankaccounts.html">Bank Accounts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/settingsIcon.png"
+              alt="Icon"
+            />
+            <a href="Settings Page.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <div class="status-bar">
+          <div>
+            24,500 FCFA<br /><span class="status-heading">Total Debt</span>
+          </div>
+          <div>
+            2,000 FCFA<br /><span class="status-heading">Monthly Payment</span>
+          </div>
+          <div>
+            1,225 FCFA<br /><span class="status-heading">Interest Paid</span>
+          </div>
+          <div>
+            14 months<br /><span class="status-heading">Time to Debt-Free</span>
+          </div>
+          <div>
+            Mar 2026<br /><span class="status-heading">Projected End Date</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="control-group">
+            <div class="amount-input">
+              <label>Monthly Payment:</label>
+              <button onclick="decreaseAmount()">-</button>
+              <input type="text" id="amount" value="2000" />
+              <button onclick="increaseAmount()">+</button>
+            </div>
+
+            <div>
+              <label>Sort Order:</label>
+              <select id="sortOrder">
+                <option value="lowest">Lowest Balance First</option>
+                <option value="highest">Highest Balance First</option>
+              </select>
+            </div>
+
+            <button class="apply-btn" onclick="applyChanges()">
+              Update Plan
+            </button>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Month</th>
+                <th>Payment</th>
+                <th>Principal</th>
+                <th>Interest</th>
+                <th>Remaining Balance</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <!-- Table content will be populated by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="chart-container">
+          <!-- Chart will be rendered here -->
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../assets/images/Dedox.png" alt="" class="logo" />
+          <p>
+            Your journey to financial freedom starts here. Take control of your
+            debt and build a secure financial future.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Debt Detox. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      let currentAmount = 2000;
+
+      function decreaseAmount() {
+        if (currentAmount > 100) {
+          currentAmount -= 100;
+          document.getElementById("amount").value = currentAmount;
+          updateTable();
+        }
+      }
+
+      function increaseAmount() {
+        currentAmount += 100;
+        document.getElementById("amount").value = currentAmount;
+        updateTable();
+      }
+
+      function applyChanges() {
+        updateTable();
+      }
+
+      function formatFCFA(amount) {
+        return `${amount.toFixed(0)} FCFA`; // Remove decimal places and add FCFA
+      }
+
+      function updateTable() {
+        const tableBody = document.getElementById("tableBody");
+        tableBody.innerHTML = "";
+
+        let balance = 24500;
+        const interestRate = 0.05 / 12; // 5% annual interest rate
+        const payment = currentAmount;
+
+        for (let i = 1; i <= 24; i++) {
+          const interest = balance * interestRate;
+          const principal = Math.min(payment - interest, balance);
+          balance = Math.max(0, balance - principal);
+
+          const row = document.createElement("tr");
+          row.innerHTML = `
+                      <td>${i}</td>
+                      <td>${getMonthName(i)}</td>
+                      <td>${formatFCFA(payment)}</td>
+                      <td>${formatFCFA(principal)}</td>
+                      <td>${formatFCFA(interest)}</td>
+                      <td>${formatFCFA(balance)}</td>
+                  `;
+          tableBody.appendChild(row);
+
+          if (balance === 0) break;
+        }
+      }
+
+      function getMonthName(monthsFromNow) {
+        const months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+        const date = new Date();
+        date.setMonth(date.getMonth() + monthsFromNow - 1);
+        return `${months[date.getMonth()]} ${date.getFullYear()}`;
+      }
+
+      // Initialize table on page load
+      document.addEventListener("DOMContentLoaded", updateTable);
+    </script>
+  </body>
+</html>

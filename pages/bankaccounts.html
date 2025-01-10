@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debt Detox - Bank Accounts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/dashboard1.css" />
+    <link rel="stylesheet" href="../css/bankaccounts.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <img src="../assets/images/Dedox.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li>Status: In Progress</li>
+        <li>Time Left: 365 Days</li>
+      </ul>
+    </div>
+    <div class="container">
+      <!-- Side Bar -->
+      <div class="sidebar">
+        <img
+          class="profile-picture"
+          src="../assets/images/pfp.jpg"
+          alt="profile-picture"
+        />
+        <h2>Light Yagami</h2>
+        <ul>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/dashboardIcon.png"
+              alt="icon"
+            />
+            <a class="sidebar-page" href="dashboard1.html">Dashboard</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/debtIcon.png"
+              alt="Icon"
+            />
+            <a class="sidebar-page" href="debts.html">Debts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffplanIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffplan.html">Payoff Plan</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffhistoryIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffhistory.html">Payoff History</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/bankIcon.png"
+              alt="Icon"
+            />
+            <a href="bankaccounts.html" class="active">Bank Accounts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/settingsIcon.png"
+              alt="Icon"
+            />
+            <a href="settings.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <div>3<br /><span class="status-heading">Connected Banks</span></div>
+          <div>5<br /><span class="status-heading">Active Accounts</span></div>
+          <div>
+            150,000 CFCA<br /><span class="status-heading">Total Balance</span>
+          </div>
+          <div>
+            25,000 CFCA<br /><span class="status-heading">Monthly Income</span>
+          </div>
+          <div>
+            15,000 CFCA<br /><span class="status-heading"
+              >Monthly Expenses</span
+            >
+          </div>
+        </div>
+
+        <!-- Bank Accounts Section -->
+        <div class="bank-section">
+          <div class="bank-header">
+            <h2>Connected Bank Accounts</h2>
+            <button class="connect-bank-btn">+ Connect New Bank</button>
+          </div>
+
+          <!-- Bank Groups -->
+          <div class="bank-groups">
+            <!-- CCA Bank -->
+            <div class="bank-group">
+              <div class="bank-info">
+                <img
+                  src="../assets/images/ccaBank.jpg"
+                  alt="CCA Bank"
+                  class="bank-logo"
+                />
+                <div class="bank-details">
+                  <h3>CCA Bank</h3>
+                  <span class="connection-status">Connected</span>
+                </div>
+                <button class="disconnect-btn">Disconnect</button>
+              </div>
+              <div class="accounts-list">
+                <div class="account-card">
+                  <div class="account-header">
+                    <span class="account-type">Checking Account</span>
+                    <span class="account-number">****4567</span>
+                  </div>
+                  <div class="account-balance">75,000 CFCA</div>
+                  <div class="account-activity">
+                    <span>Last transaction: Today</span>
+                    <button class="view-transactions">View Transactions</button>
+                  </div>
+                </div>
+                <div class="account-card">
+                  <div class="account-header">
+                    <span class="account-type">Savings Account</span>
+                    <span class="account-number">****7890</span>
+                  </div>
+                  <div class="account-balance">25,000 CFCA</div>
+                  <div class="account-activity">
+                    <span>Last transaction: Yesterday</span>
+                    <button class="view-transactions">View Transactions</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Eco Bank -->
+            <div class="bank-group">
+              <div class="bank-info">
+                <img
+                  src="../assets/images/ecobank.png"
+                  alt="Eco Bank"
+                  class="bank-logo"
+                />
+                <div class="bank-details">
+                  <h3>Eco Bank</h3>
+                  <span class="connection-status">Connected</span>
+                </div>
+                <button class="disconnect-btn">Disconnect</button>
+              </div>
+              <div class="accounts-list">
+                <div class="account-card">
+                  <div class="account-header">
+                    <span class="account-type">Checking Account</span>
+                    <span class="account-number">****1234</span>
+                  </div>
+                  <div class="account-balance">35,000 CFCA</div>
+                  <div class="account-activity">
+                    <span>Last transaction: 2 days ago</span>
+                    <button class="view-transactions">View Transactions</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BICEC -->
+            <div class="bank-group">
+              <div class="bank-info">
+                <img
+                  src="../assets/images/bicec.png"
+                  alt="BICEC"
+                  class="bank-logo"
+                />
+                <div class="bank-details">
+                  <h3>BICEC</h3>
+                  <span class="connection-status">Connected</span>
+                </div>
+                <button class="disconnect-btn">Disconnect</button>
+              </div>
+              <div class="accounts-list">
+                <div class="account-card">
+                  <div class="account-header">
+                    <span class="account-type">Current Account</span>
+                    <span class="account-number">****9876</span>
+                  </div>
+                  <div class="account-balance">15,000 CFCA</div>
+                  <div class="account-activity">
+                    <span>Last transaction: 3 days ago</span>
+                    <button class="view-transactions">View Transactions</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="/assets/images/Dedox.png" alt="" class="logo" />
+          <p>
+            Your journey to financial freedom starts here. Take control of your
+            debt and build a secure financial future.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Debt Detox. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,253 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Setting Page.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Setting Page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <title>Debt detox/Settings Page</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <img src="../images/Debt Detox logo.png" alt="Company Logo">
-                <span class="company-name">Debt Detox</span>
-            </div>
-            <nav>
-                <a href="help.html">Help</a>
-            </nav>
+      <div class="header-container">
+        <div class="logo">
+          <img src="../images/Debt Detox logo.png" alt="Company Logo" />
+          <span class="company-name">Debt Detox</span>
         </div>
+        <nav>
+          <a href="help.html">Help</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <!-- User Profile Information Section --> 
-         <section class="user-profile"> 
-            <img src="../images/theone.jpg" alt="Profile Picture" class="profile-pic"> 
-            <div class="profile-info"> 
-                <h2>Kiyo Koji</h2> 
-                <p>Email: kiyokoji@gmail.com</p> 
-                <p>Phone: +237 123456789</p> 
-            </div> 
-        </section>
-        <section class="settings">
-            <h1>Settings</h1>
-
-            <!-- Account Settings -->
-            <section>
-                <h2>Account Settings</h2>
-                <div class="setting-item">
-                    <label for="profile-info">Profile Information</label>
-                    <input type="text" id="profile-info" placeholder="Update Profile Information">
-                </div>
-                <div class="setting-item">
-                    <label for="change-password">Password Management</label>
-                    <input type="password" id="change-password" placeholder="Change Password">
-                </div>
-                <div class="setting-item">
-                    <label for="account-security">Account Security</label>
-                    <input type="text" id="account-security" placeholder="Update Security Questions">
-                </div>
-            </section>
-
-            <!-- Privacy Settings -->
-            <section>
-                <h2>Privacy Settings</h2>
-                <div class="setting-item">
-                    <label for="data-sharing">Data Sharing</label>
-                    <input type="checkbox" id="data-sharing"> Allow data sharing with third parties
-                </div>
-                <div class="setting-item">
-                    <label for="visibility">Visibility</label>
-                    <select id="visibility">
-                        <option>Public</option>
-                        <option>Private</option>
-                        <option>Friends Only</option>
-                    </select>
-                </div>
-                
-            </section>
-
-            <!-- Notification Settings -->
-            <section>
-                <h2>Notification Settings</h2>
-                <div class="setting-item">
-                    <label for="email-notifications">Email Notifications</label>
-                    <input type="checkbox" id="email-notifications"> Receive Email Notifications
-                </div>
-                <div class="setting-item">
-                    <label for="push-notifications">Push Notifications</label>
-                    <input type="checkbox" id="push-notifications"> Receive Push Notifications
-                </div>
-                <div class="setting-item">
-                    <label for="sms-notifications">SMS Notifications</label>
-                    <input type="checkbox" id="sms-notifications"> Receive SMS Notifications
-                </div>
-            </section>
-
-            <!-- Display Settings -->
-            <section>
-                <h2>Display Settings</h2>
-                <div class="setting-item">
-                    <label for="theme">Theme</label>
-                    <select id="theme">
-                        <option value="../css/styles-light.css">Light</option> 
-                        <option value="../css/styles-dark.css">Dark</option>
-                    </select>
-                </div>
-                <div class="setting-item">
-                    <label for="font-size">Font Size</label>
-                    <input type="number" id="font-size" placeholder="Set Font Size">
-                </div>
-                <div class="setting-item">
-                    <label for="layout">Layout</label>
-                    <select id="layout">
-                        <option>Standard</option>
-                        <option>Compact</option>
-                    </select>
-                </div>
-            </section>
-
-            <!-- Content Settings -->
-            <section>
-                <h2>Content Settings</h2>
-                <div class="setting-item">
-                    <label for="language">Language</label>
-                    <select id="language">
-                        <option>English</option>
-                        <option>French</option>
-                        <option>Spanish</option>
-                        <option>German</option>
-                    </select>
-                </div>
-                
-            </section>
-
-            <!-- Security Settings -->
-            <section>
-                <h2>Security Settings</h2>
-                <div class="setting-item">
-                    <label for="login-alerts">Login Alerts</label>
-                    <input type="checkbox" id="login-alerts"> Receive Login Alerts
-                </div>
-                
-                <div class="setting-item">
-                    <label for="session-management">Session Management</label>
-                    <input type="text" id="session-management" placeholder="View Active Sessions">
-                </div>
-            </section>
-
-            
-                 
-            <section>
-                <h2>Help and Support</h2>
-                <div class="setting-item">
-                    <label for="user-guides">User Guides</label>
-                    <input type="text" id="user-guides" placeholder="Access User Manuals">
-                </div>
-                <div class="setting-item">
-                    <label for="feedback">Feedback</label>
-                    <input type="text" id="feedback" placeholder="Provide Feedback">
-                </div>
-                <div class="setting-item">
-                    <label for="contact-support">Contact Support</label>
-                    <input type="text" id="contact-support" placeholder="Contact Customer Support">
-                </div>
-            </section>
-        
-            <!-- Legal and Compliance -->
-            <section>
-                <h2>Legal and Compliance</h2>
-                <div class="setting-item">
-                    <label for="terms-of-service">Terms of Service</label>
-                    <input type="text" id="terms-of-service" placeholder="View Terms of Service">
-                </div>
-                <div class="setting-item">
-                    <label for="privacy-policy">Privacy Policy</label>
-                    <input type="text" id="privacy-policy" placeholder="View Privacy Policy">
-                </div>
-                <div class="setting-item">
-                    <label for="cookie-preferences">Cookie Preferences</label>
-                    <input type="text" id="cookie-preferences" placeholder="Manage Cookie Preferences">
-                </div>
-            </section>
-        
-            <!-- Miscellaneous Settings -->
-            <section>
-                <h2>Miscellaneous Settings</h2>
-                <div class="setting-item">
-                    <label for="location-services">Location Services</label>
-                    <input type="checkbox" id="location-services"> Enable Location Services
-                </div>
-                <div class="setting-item">
-                    <label for="time-zone">Time Zone</label>
-                    <select id="time-zone">
-                        <option>UTC-12:00</option>
-                        <option>UTC-11:00</option>
-                        <option>UTC-10:00</option>
-                        <option>UTC-09:00</option>
-                        <!-- Add other time zones as needed -->
-                    </select>
-                </div>
-                <div class="setting-item">
-                    <label for="language-region">Language and Region</label>
-                    <input type="text" id="language-region" placeholder="Set Language and Region">
-                </div>
-            </section>
-        </section>
-        <div class="setting-item">
-            <button class="submit">
-                Save changes
-            </button>
+      <!-- User Profile Information Section -->
+      <section class="user-profile">
+        <img
+          src="../images/theone.jpg"
+          alt="Profile Picture"
+          class="profile-pic"
+        />
+        <div class="profile-info">
+          <h2>Kiyo Koji</h2>
+          <p>Email: kiyokoji@gmail.com</p>
+          <p>Phone: +237 123456789</p>
         </div>
+      </section>
+      <section class="settings">
+        <h1>Settings</h1>
+
+        <!-- Account Settings -->
+        <section>
+          <h2>Account Settings</h2>
+          <div class="setting-item">
+            <label for="profile-info">Profile Information</label>
+            <input
+              type="text"
+              id="profile-info"
+              placeholder="Update Profile Information"
+            />
+          </div>
+          <div class="setting-item">
+            <label for="change-password">Password Management</label>
+            <input
+              type="password"
+              id="change-password"
+              placeholder="Change Password"
+            />
+          </div>
+          <div class="setting-item">
+            <label for="account-security">Account Security</label>
+            <input
+              type="text"
+              id="account-security"
+              placeholder="Update Security Questions"
+            />
+          </div>
+        </section>
+
+        <!-- Privacy Settings -->
+        <section>
+          <h2>Privacy Settings</h2>
+          <div class="setting-item">
+            <label for="data-sharing">Data Sharing</label>
+            <input type="checkbox" id="data-sharing" /> Allow data sharing with
+            third parties
+          </div>
+          <div class="setting-item">
+            <label for="visibility">Visibility</label>
+            <select id="visibility">
+              <option>Public</option>
+              <option>Private</option>
+              <option>Friends Only</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Notification Settings -->
+        <section>
+          <h2>Notification Settings</h2>
+          <div class="setting-item">
+            <label for="email-notifications">Email Notifications</label>
+            <input type="checkbox" id="email-notifications" /> Receive Email
+            Notifications
+          </div>
+          <div class="setting-item">
+            <label for="push-notifications">Push Notifications</label>
+            <input type="checkbox" id="push-notifications" /> Receive Push
+            Notifications
+          </div>
+          <div class="setting-item">
+            <label for="sms-notifications">SMS Notifications</label>
+            <input type="checkbox" id="sms-notifications" /> Receive SMS
+            Notifications
+          </div>
+        </section>
+
+        <!-- Display Settings -->
+        <section>
+          <h2>Display Settings</h2>
+          <div class="setting-item">
+            <label for="theme">Theme</label>
+            <select id="theme">
+              <option value="../css/styles-light.css">Light</option>
+              <option value="../css/styles-dark.css">Dark</option>
+            </select>
+          </div>
+          <div class="setting-item">
+            <label for="font-size">Font Size</label>
+            <input type="number" id="font-size" placeholder="Set Font Size" />
+          </div>
+          <div class="setting-item">
+            <label for="layout">Layout</label>
+            <select id="layout">
+              <option>Standard</option>
+              <option>Compact</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Content Settings -->
+        <section>
+          <h2>Content Settings</h2>
+          <div class="setting-item">
+            <label for="language">Language</label>
+            <select id="language">
+              <option>English</option>
+              <option>French</option>
+              <option>Spanish</option>
+              <option>German</option>
+            </select>
+          </div>
+        </section>
+
+        <!-- Security Settings -->
+        <section>
+          <h2>Security Settings</h2>
+          <div class="setting-item">
+            <label for="login-alerts">Login Alerts</label>
+            <input type="checkbox" id="login-alerts" /> Receive Login Alerts
+          </div>
+
+          <div class="setting-item">
+            <label for="session-management">Session Management</label>
+            <input
+              type="text"
+              id="session-management"
+              placeholder="View Active Sessions"
+            />
+          </div>
+        </section>
+
+        <section>
+          <h2>Help and Support</h2>
+          <div class="setting-item">
+            <label for="user-guides">User Guides</label>
+            <input
+              type="text"
+              id="user-guides"
+              placeholder="Access User Manuals"
+            />
+          </div>
+          <div class="setting-item">
+            <label for="feedback">Feedback</label>
+            <input type="text" id="feedback" placeholder="Provide Feedback" />
+          </div>
+          <div class="setting-item">
+            <label for="contact-support">Contact Support</label>
+            <input
+              type="text"
+              id="contact-support"
+              placeholder="Contact Customer Support"
+            />
+          </div>
+        </section>
+
+        <!-- Legal and Compliance -->
+        <section>
+          <h2>Legal and Compliance</h2>
+          <div class="setting-item">
+            <label for="terms-of-service">Terms of Service</label>
+            <input
+              type="text"
+              id="terms-of-service"
+              placeholder="View Terms of Service"
+            />
+          </div>
+          <div class="setting-item">
+            <label for="privacy-policy">Privacy Policy</label>
+            <input
+              type="text"
+              id="privacy-policy"
+              placeholder="View Privacy Policy"
+            />
+          </div>
+          <div class="setting-item">
+            <label for="cookie-preferences">Cookie Preferences</label>
+            <input
+              type="text"
+              id="cookie-preferences"
+              placeholder="Manage Cookie Preferences"
+            />
+          </div>
+        </section>
+
+        <!-- Miscellaneous Settings -->
+        <section>
+          <h2>Miscellaneous Settings</h2>
+          <div class="setting-item">
+            <label for="location-services">Location Services</label>
+            <input type="checkbox" id="location-services" /> Enable Location
+            Services
+          </div>
+          <div class="setting-item">
+            <label for="time-zone">Time Zone</label>
+            <select id="time-zone">
+              <option>UTC-12:00</option>
+              <option>UTC-11:00</option>
+              <option>UTC-10:00</option>
+              <option>UTC-09:00</option>
+              <!-- Add other time zones as needed -->
+            </select>
+          </div>
+          <div class="setting-item">
+            <label for="language-region">Language and Region</label>
+            <input
+              type="text"
+              id="language-region"
+              placeholder="Set Language and Region"
+            />
+          </div>
+        </section>
+      </section>
+      <div class="setting-item">
+        <button class="submit">Save changes</button>
+      </div>
     </main>
-        
+
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How it Works</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#terms">Terms of Use</a></li>
-                    <li><a href="#disclaimer">Disclaimer</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-contact">
-                <div>Email: support@debtdedox.com</div>
-                <div>Phone Number: +237 xxx xxx xxx/ +237 xxx xxx xxx</div>
-                <div>Address: xxxxxxx</div>
-                
-                <div class="social-links">
-                    <h3>Social Links</h3>
-                    <div class="social-icons">
-                        <a href="#facebook"><img src="../images/facebook.png" alt="Facebook"></a>
-                        <a href="#linkedin"><img src="../images/linkedin.png" alt="LinkedIn"></a>
-                        <a href="#instagram"><img src="../images/instagram.png" alt="Instagram"></a>
-                        <a href="#whatsapp"><img src="../images/phone.png" alt="WhatsApp"></a>
-                    </div>
-                </div>
-            </div>
+      <div class="footer-container">
+        <div class="footer-nav">
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
         </div>
-        
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <div>Your Partner in Financial Freedom.</div>
-                <div>© 2024 DebtDedox. All rights reserved.</div>
-            </div>
+
+        <div class="footer-nav">
+          <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Use</a></li>
+            <li><a href="#disclaimer">Disclaimer</a></li>
+          </ul>
         </div>
+
+        <div class="footer-contact">
+          <div>Email: support@debtdedox.com</div>
+          <div>Phone Number: +237 xxx xxx xxx/ +237 xxx xxx xxx</div>
+          <div>Address: xxxxxxx</div>
+
+          <div class="social-links">
+            <h3>Social Links</h3>
+            <div class="social-icons">
+              <a href="#facebook"
+                ><img src="../images/facebook.png" alt="Facebook"
+              /></a>
+              <a href="#linkedin"
+                ><img src="../images/linkedin.png" alt="LinkedIn"
+              /></a>
+              <a href="#instagram"
+                ><img src="../images/instagram.png" alt="Instagram"
+              /></a>
+              <a href="#whatsapp"
+                ><img src="../images/phone.png" alt="WhatsApp"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <div class="footer-bottom">
+          <div>Your Partner in Financial Freedom.</div>
+          <div>© 2024 DebtDedox. All rights reserved.</div>
+        </div>
+      </div>
     </footer>
     <script src="javascript/script.js"></script>
-</body>
+  </body>
 </html>
-        

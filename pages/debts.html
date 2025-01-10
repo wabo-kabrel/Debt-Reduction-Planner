@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debt Detox - Debts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/dashboard1.css" />
+    <link rel="stylesheet" href="../css/debts.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <img src="../assets/images/Dedox.png" alt="" class="logo" />
+      <ul class="nav-items">
+        <li>Status: In Progress</li>
+        <li>Time Left: 365 Days</li>
+      </ul>
+    </div>
+    <div class="container">
+      <!-- Side Bar -->
+      <div class="sidebar">
+        <img
+          class="profile-picture"
+          src="../assets/images/pfp.jpg"
+          alt="profile-picture"
+        />
+        <h2>Light Yagami</h2>
+        <ul>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/dashboardIcon.png"
+              alt="icon"
+            />
+            <a class="sidebar-page" href="dashboard2.html">Dashboard</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/debtIcon.png"
+              alt="Icon"
+            />
+            <a class="sidebar-page active" href="debts.html">Debts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffplanIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffplan.html">Payoff Plan</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffhistoryIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffhistory.html">Payoff History</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/bankIcon.png"
+              alt="Icon"
+            />
+            <a href="bankaccounts.html">Bank Accounts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/settingsIcon.png"
+              alt="Icon"
+            />
+            <a href="settings.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <div>
+            50,000 CFCA<br /><span class="status-heading">Total Debt</span>
+          </div>
+          <div>
+            15%<br /><span class="status-heading">Interest Rate (Avg)</span>
+          </div>
+          <div>
+            1,500 CFCA<br /><span class="status-heading">Monthly Payment</span>
+          </div>
+          <div>25%<br /><span class="status-heading">Progress</span></div>
+          <div>
+            01/01/2026<br /><span class="status-heading"
+              >Expected Completion</span
+            >
+          </div>
+        </div>
+
+        <!-- Debts Section -->
+        <div class="debts-section">
+          <div class="debts-header">
+            <h2>My Debts</h2>
+            <button class="add-debt-btn">+ Add New Debt</button>
+          </div>
+
+          <div class="debts-list">
+            <!-- Credit Card Debt -->
+            <div class="debt-card">
+              <div class="debt-card-header">
+                <h3>Credit Card</h3>
+                <span class="debt-amount">25,000 CFCA</span>
+              </div>
+              <div class="debt-details">
+                <div class="detail-row">
+                  <span>Interest Rate:</span>
+                  <span>18%</span>
+                </div>
+                <div class="detail-row">
+                  <span>Minimum Payment:</span>
+                  <span>750 CFCA</span>
+                </div>
+                <div class="detail-row">
+                  <span>Due Date:</span>
+                  <span>15th of each month</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 30%"></div>
+                </div>
+                <div class="detail-row">
+                  <span>Progress:</span>
+                  <span>30%</span>
+                </div>
+              </div>
+              <div class="debt-card-actions">
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn delete">Delete</button>
+              </div>
+            </div>
+
+            <!-- Personal Loan -->
+            <div class="debt-card">
+              <div class="debt-card-header">
+                <h3>Personal Loan</h3>
+                <span class="debt-amount">25,000 CFCA</span>
+              </div>
+              <div class="debt-details">
+                <div class="detail-row">
+                  <span>Interest Rate:</span>
+                  <span>12%</span>
+                </div>
+                <div class="detail-row">
+                  <span>Minimum Payment:</span>
+                  <span>750 CFCA</span>
+                </div>
+                <div class="detail-row">
+                  <span>Due Date:</span>
+                  <span>1st of each month</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress" style="width: 20%"></div>
+                </div>
+                <div class="detail-row">
+                  <span>Progress:</span>
+                  <span>20%</span>
+                </div>
+              </div>
+              <div class="debt-card-actions">
+                <button class="action-btn edit">Edit</button>
+                <button class="action-btn delete">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../assets/images/Dedox.png" alt="" class="logo" />
+          <p>
+            Your journey to financial freedom starts here. Take control of your
+            debt and build a secure financial future.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Debt Detox. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

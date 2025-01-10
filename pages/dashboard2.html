@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debt Detox Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      p {
+        color: #58595b;
+      }
+
+      /* Navigation Bar */
+      .nav-bar {
+        height: 50px;
+        background-color: #198cea;
+        color: white;
+        padding: 10px;
+        display: flex;
+        z-index: 1000;
+        position: sticky;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-items li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 30px;
+        font-weight: bold;
+      }
+
+      .logo {
+        height: 80px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        grid-gap: 20px;
+        padding: 20px;
+      }
+
+      /* Side Bar */
+      .sidebar {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        height: 74vh;
+      }
+
+      .profile-picture {
+        height: 80px;
+        width: 80px;
+        border-radius: 100%;
+        margin-left: 30%;
+      }
+
+      .sidebar h2 {
+        margin: 10px 0px 50px 24%;
+        color: #58595b;
+        font-size: medium;
+      }
+
+      .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .sidebar li {
+        margin-bottom: 10px;
+        border-radius: 10px;
+        height: 40px;
+      }
+
+      .sidebar li a {
+        font-weight: 550;
+        text-decoration: none;
+        color: #58595b;
+      }
+
+      .sidebar li a:hover,
+      li a:active {
+        color: #64b5f6;
+      }
+
+      .sidebar-icon {
+        height: 15px;
+        width: 15px;
+        justify-content: center;
+        align-self: center;
+        margin-right: 15px;
+      }
+
+      /* Main Content */
+      .main-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Status Bar */
+      .status-bar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .status-heading {
+        font-weight: bold;
+      }
+
+      .status-bar div {
+        flex: 1;
+        padding: 10px;
+        text-align: center;
+        color: #58595b;
+        background-color: #d7ecf7;
+        border-radius: 5px;
+      }
+
+      .status-bar div:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      /* Dashboard Cards */
+      .dashboard-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h3 {
+        color: #58595b;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
+      /* Debt Overview Card */
+      .debt-overview {
+        grid-column: span 1;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #d7ecf7;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+
+      .progress {
+        width: 35%;
+        height: 100%;
+        background-color: #198cea;
+        border-radius: 5px;
+        transition: width 0.5s ease-in-out;
+      }
+
+      .progress-stats {
+        display: flex;
+        justify-content: space-between;
+        color: #58595b;
+        font-size: 0.9em;
+      }
+
+      /* Payment Progress Card */
+      .payment-progress {
+        grid-column: span 1;
+        height: 300px;
+      }
+
+      .chart-container {
+        position: relative;
+        height: 250px;
+        width: 100%;
+      }
+
+      /* Recent Payments Card */
+      .recent-payments {
+        grid-column: span 2;
+      }
+
+      .payment-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .payment-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid #d7ecf7;
+      }
+
+      .payment-item:last-child {
+        border-bottom: none;
+      }
+
+      .status-completed {
+        color: #4caf50;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #198cea;
+        color: white;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 15px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-section a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+      <img src="../assets/images/Dedox.png" alt="" class="logo" />
+      <ul class="nav-items">
+        <li>Status: Active</li>
+        <li>Time Left: 245 Days</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <!-- Side Bar -->
+      <div class="sidebar">
+        <img
+          class="profile-picture"
+          src="../assets/images/pfp.jpg"
+          alt="profile-picture"
+        />
+        <h2>Light Yagami</h2>
+        <ul>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/dashboardIcon.png"
+              alt="icon"
+            />
+            <a href="dashboard2.html">Dashboard</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/debtIcon.png"
+              alt="Icon"
+            />
+            <a href="debts.html">Debts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffplanIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffplan.html">Payoff Plan</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffhistoryIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffhistory.html">Payoff History</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/bankIcon.png"
+              alt="Icon"
+            />
+            <a href="bankaccounts.html">Bank Accounts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/settingsIcon.png"
+              alt="Icon"
+            />
+            <a href="settings.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Status Bar -->
+        <div class="status-bar">
+          <div>15,000 CFCA<br /><span class="status-heading">Debt</span></div>
+          <div>
+            2,000 CFCA<br /><span class="status-heading">Weekly Budget</span>
+          </div>
+          <div>
+            8,000 CFCA<br /><span class="status-heading">Monthly Budget</span>
+          </div>
+          <div>
+            35%<br /><span class="status-heading">Current Progress</span>
+          </div>
+          <div>
+            01/09/2025<br /><span class="status-heading">Current Deadline</span>
+          </div>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-cards">
+          <!-- Debt Overview Card -->
+          <div class="card debt-overview">
+            <h3>Debt Overview</h3>
+            <div class="debt-details">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 10px;
+                "
+              >
+                <span>Personal Loan</span>
+                <span>15,000 CFCA</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+              <div class="progress-stats">
+                <span>Paid: 5,250 CFCA</span>
+                <span>Remaining: 9,750 CFCA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Progress Card -->
+          <div class="card payment-progress">
+            <h3>Payment Progress</h3>
+            <div class="chart-container">
+              <canvas id="payment-chart"></canvas>
+            </div>
+          </div>
+
+          <!-- Recent Payments Card -->
+          <div class="card recent-payments">
+            <h3>Recent Payments</h3>
+            <ul class="payment-list">
+              <li class="payment-item">
+                <span>January 8, 2025</span>
+                <span>2,000 CFCA</span>
+                <span class="status-completed">Completed</span>
+              </li>
+              <li class="payment-item">
+                <span>January 1, 2025</span>
+                <span>2,200 CFCA</span>
+                <span class="status-completed">Completed</span>
+              </li>
+              <li class="payment-item">
+                <span>December 25, 2024</span>
+                <span>1,900 CFCA</span>
+                <span class="status-completed">Completed</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../assets/images/Dedox.png" alt="" class="logo" />
+          <p>
+            Your journey to financial freedom starts here. Take control of your
+            debt and build a secure financial future.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Debt Detox. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the canvas element
+        const ctx = document.getElementById("payment-chart").getContext("2d");
+
+        // Create the chart
+        const myChart = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: ["Jan", "Feb", "Mar", "Apr"],
+            datasets: [
+              {
+                label: "Planned Payments",
+                data: [2000, 2000, 2000, 2000],
+                borderColor: "#64B5F6",
+                backgroundColor: "rgba(100, 181, 246, 0.1)",
+                borderWidth: 2,
+                tension: 0.4,
+                fill: true,
+              },
+              {
+                label: "Actual Payments",
+                data: [2200, 1900, 2100, 2000],
+                borderColor: "#198cea",
+                backgroundColor: "rgba(25, 140, 234, 0.1)",
+                borderWidth: 2,
+                tension: 0.4,
+                fill: true,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "top",
+              },
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: "Amount (CFCA)",
+                },
+              },
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+/* Add this as debts.css */
+
+.debts-section {
+    padding: 20px;
+  }
+  
+  .debts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .debts-header h2 {
+    color: #58595B;
+    margin: 0;
+  }
+  
+  .add-debt-btn {
+    background-color: #198cea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .add-debt-btn:hover {
+    background-color: #64B5F6;
+  }
+  
+  .debts-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .debt-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  .debt-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .debt-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .debt-card-header h3 {
+    color: #58595B;
+    margin: 0;
+  }
+  
+  .debt-amount {
+    font-size: 18px;
+    font-weight: bold;
+    color: #198cea;
+  }
+  
+  .debt-details {
+    margin-bottom: 20px;
+  }
+  
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #58595B;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #198cea;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  
+  .debt-card-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .action-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+  }
+  
+  .action-btn.edit {
+    background-color: #f2f2f2;
+    color: #58595B;
+  }
+  
+  .action-btn.delete {
+    background-color: #ffebee;
+    color: #d32f2f;
+  }
+  
+  .action-btn.edit:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .action-btn.delete:hover {
+    background-color: #ffcdd2;
+  }
+  
+  /* Make the active sidebar link blue */
+  .sidebar li a.active {
+    color: #198cea;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .debts-header {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .debts-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .debt-card {
+      margin-bottom: 20px;
+    }
+  }

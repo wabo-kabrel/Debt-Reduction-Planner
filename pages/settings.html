@@ -1,0 +1,215 @@
+<!-- The Old Settings Page above lacks a side bar for easy navigation -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debt Dedox - Settings</title>
+    <link rel="stylesheet" href="../css/settings.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <img src="../assets/images/Dedox.png" alt="Logo" class="logo" />
+      <ul class="nav-items">
+        <li>Status: In Progress</li>
+        <li>Time Left: 365 Days</li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="sidebar">
+        <img
+          class="profile-picture"
+          src="../assets/images/pfp.jpg"
+          alt="profile-picture"
+        />
+        <h2>Light Yagami</h2>
+        <ul>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/dashboardIcon.png"
+              alt="icon"
+            />
+            <a href="dashboard2.html">Dashboard</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/debtIcon.png"
+              alt="Icon"
+            />
+            <a href="debts.html">Debts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffplanIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffplan.html">Payoff Plan</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/payoffhistoryIcon.png"
+              alt="Icon"
+            />
+            <a href="payoffhistory.html">Payoff History</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/bankIcon.png"
+              alt="Icon"
+            />
+            <a href="bankaccounts.html">Bank Accounts</a>
+          </li>
+          <li>
+            <img
+              class="sidebar-icon"
+              src="../assets/icons/settingsIcon.png"
+              alt="Icon"
+            />
+            <a href="Settings Page.html">Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main-content">
+        <div class="settings-section">
+          <h2>Profile Settings</h2>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" value="Light Yagami" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" value="light.yagami@debtdetox.com" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" value="+237 123 456 789" />
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h2>Security</h2>
+          <div class="form-group">
+            <label for="current-password">Current Password</label>
+            <input type="password" id="current-password" />
+          </div>
+          <div class="form-group">
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password" />
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm New Password</label>
+            <input type="password" id="confirm-password" />
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h2>Notifications</h2>
+          <div class="form-group">
+            <div class="toggle-switch">
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider"></span>
+              </label>
+              <span>Email Notifications</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="toggle-switch">
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider"></span>
+              </label>
+              <span>SMS Notifications</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="toggle-switch">
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+              <span>Payment Reminders</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h2>Currency Settings</h2>
+          <div class="form-group">
+            <label for="currency">Preferred Currency</label>
+            <select id="currency">
+              <option value="FCFA" selected>
+                FCFA (Central African CFA franc)
+              </option>
+              <option value="USD">USD (US Dollar)</option>
+              <option value="EUR">EUR (Euro)</option>
+            </select>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../assets/images/Dedox.png" alt="" class="logo" />
+          <p>
+            Your journey to financial freedom starts here. Take control of your
+            debt and build a secure financial future.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Debt Detox. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Add event listener to save button
+      document
+        .querySelector(".btn-primary")
+        .addEventListener("click", function () {
+          // Here you would typically send the data to a server
+          alert("Settings saved successfully!");
+        });
+    </script>
+  </body>
+</html>
