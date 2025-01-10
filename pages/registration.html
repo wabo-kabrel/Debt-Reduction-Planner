@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Registration Form</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      /* Updated Navigation Bar Styles */
+      .nav-bar {
+        height: 80px; /* Increased height to match logo */
+        background-color: #198cea;
+        padding: 0 20px;
+        display: flex;
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-links ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li {
+        display: inline-block;
+        margin-right: 30px;
+      }
+
+      .nav-links li:last-child {
+        margin-right: 0;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0;
+        border-bottom: 1.5px solid transparent;
+        transition: border-bottom 0.5s ease-in-out;
+      }
+
+      .nav-links a:hover {
+        border-bottom: 1.5px solid #fff;
+      }
+
+      .logo {
+        height: 80px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .form-container {
+        background: white;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-header {
+        background: #a8d5ff;
+        padding: 20px;
+        text-align: center;
+        font-size: 24px;
+        color: #000;
+      }
+
+      .form-content {
+        padding: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .input-group {
+        position: relative;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid #ddd;
+        outline: none;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-control:focus {
+        border-color: #2196f3;
+      }
+
+      .toggle-password {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #2196f3;
+        background: none;
+        border: none;
+        padding: 5px;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 12px;
+        background: #2196f3;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .submit-btn:hover {
+        background: #1976d2;
+      }
+
+      .form-footer {
+        background: #a8d5ff;
+        padding: 15px;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .form-footer a {
+        color: #2196f3;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .forgot-password {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .forgot-password a {
+        color: #2196f3;
+        text-decoration: none;
+        font-size: 14px;
+      }
+
+      footer {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 40px 0 20px 0;
+      }
+
+      /* Rest of your footer styles remain the same */
+      footer .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        padding: 0 20px;
+      }
+
+      .footer-section h3 {
+        color: #198cea;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+
+      .footer-section p {
+        color: #cccccc;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        color: #cccccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #198cea;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        color: #cccccc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .social-links a:hover {
+        color: #198cea;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+      }
+
+      .footer-bottom p {
+        color: #cccccc;
+        margin: 0;
+      }
+
+      @media (max-width: 1024px) {
+        .footer-content {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-section {
+          text-align: center;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar  -->
+    <div class="nav-bar">
+      <img src="../assets/images/Dedox.png" alt="Logo" class="logo" />
+
+      <!-- Navigation links -->
+      <nav class="nav-links">
+        <ul>
+          <li class="section"><a href="../index.html">Home</a></li>
+          <li class="section"><a href="../index.html#about">About Us</a></li>
+          <li class="section"><a href="../index.html#services">Services</a></li>
+          <!-- <li class="auth-button1"><a href="/pages/login.html">Log In</a></li> -->
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main content wrapper -->
+    <div class="main-content">
+      <!-- Login Form -->
+      <div class="form-container">
+        <div class="form-header">Login</div>
+        <div class="form-content">
+          <form id="loginForm">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" required />
+                <button type="button" class="toggle-password">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 5c-7.333 0-12 6-12 6s4.667 6 12 6 12-6 12-6-4.667-6-12-6z"
+                    />
+                    <circle cx="12" cy="11" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <div class="forgot-password">
+              <a href="#">Forgot Password?</a>
+            </div>
+          </form>
+        </div>
+        <div class="form-footer">
+          Don't have an account?
+          <a href="#" class="switch-form" data-target="register"
+            >Create Account</a
+          >
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="form-container" style="display: none">
+        <div class="form-header">Create Account</div>
+        <div class="form-content">
+          <form id="registerForm">
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" required />
+                <button type="button" class="toggle-password">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 5c-7.333 0-12 6-12 6s4.667 6 12 6 12-6 12-6-4.667-6-12-6z"
+                    />
+                    <circle cx="12" cy="11" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Create Account</button>
+          </form>
+        </div>
+        <div class="form-footer">
+          Already have an account?
+          <a href="#" class="switch-form" data-target="login">Login</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="../assets/images/Dedox.png" alt="" class="logo" />
+          <p>
+            Your journey to financial freedom starts here. Take control of your
+            debt and build a secure financial future.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Debt Detox. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle password visibility
+      document.querySelectorAll(".toggle-password").forEach((button) => {
+        button.addEventListener("click", function () {
+          const input = this.previousElementSibling;
+          const type =
+            input.getAttribute("type") === "password" ? "text" : "password";
+          input.setAttribute("type", type);
+        });
+      });
+
+      // Switch between login and registration forms
+      document.querySelectorAll(".switch-form").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const forms = document.querySelectorAll(".form-container");
+          forms.forEach((form) => {
+            form.style.display =
+              form.style.display === "none" ? "block" : "none";
+          });
+        });
+      });
+
+      // Form submission handlers
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Add your login logic here
+          console.log("Login submitted");
+        });
+
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Add your registration logic here
+          console.log("Registration submitted");
+        });
+    </script>
+  </body>
+</html>
